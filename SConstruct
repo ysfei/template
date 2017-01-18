@@ -27,8 +27,8 @@ Export('env')
 SConscript('source/data/SConscript') 
 
 # Additional mode options
-if mode is 'cache':
-	# Defines cache in cache mode
+if mode == 'cache':
+	# Define cache in cache mode
 	USER        = os.environ['USER']
 	local_cache = '/Users/%s/Google Drive/cache/large_template' % USER
 	os.system('mkdir -p "%s"' % local_cache)
