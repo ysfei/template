@@ -8,16 +8,17 @@ as it can be edited after state_of_repo.log finishes running
 ===================================
 Last commit:
 
-commit 3795f04c4c9a0a1328af6ada8e7aadf05f6b2665
+commit b350ae70341d5345792cf5cf08219f4cf918aa72
 Author: Levi Boxell <leviboxell@gmail.com>
-Date:   Fri Feb 3 17:20:03 2017 -0800
+Date:   Sat Feb 4 12:47:22 2017 -0800
 
-    Switches to using emitter; still some bugs
+    Results with fixed emitter
 
 
 Files changed since last commit:
 
 .sconsign.dblite
+SConstruct
 release/paper/ondeck.pdf
 release/paper/online_appendix.pdf
 release/paper/paper.pdf
@@ -28,7 +29,6 @@ release/talk/slides.pdf
 sconstruct.log
 source/data/SConscript
 source/data/downloads.yaml
-source/data/sconscript.log
 state_of_repo.log
 
 ===================================
@@ -43,10 +43,10 @@ state_of_repo.log
    modified on: 28 Jan 2017 12:11:50
    size of file: 3902
 ./SConstruct:
-   modified on: 03 Feb 2017 17:06:23
-   size of file: 2131
+   modified on: 04 Feb 2017 14:34:17
+   size of file: 2142
 ./sconstruct.log:
-   modified on: 04 Feb 2017 12:46:30
+   modified on: 04 Feb 2017 14:52:26
    size of file: 0
 ./setup.py:
    modified on: 03 Feb 2017 08:27:41
@@ -55,25 +55,25 @@ state_of_repo.log
    modified on: 03 Feb 2017 08:27:43
    size of file: 6041
 ./state_of_repo.log:
-   modified on: 04 Feb 2017 12:46:38
-   size of file: 752
+   modified on: 04 Feb 2017 14:52:29
+   size of file: 720
 ./user-config.yaml:
    modified on: 28 Jan 2017 12:11:47
    size of file: 75
 ./build/analysis/plot.eps:
-   modified on: 04 Feb 2017 12:43:50
+   modified on: 04 Feb 2017 12:54:22
    size of file: 12829
 ./build/analysis/sconscript.log:
-   modified on: 04 Feb 2017 12:43:50
+   modified on: 04 Feb 2017 12:54:22
    size of file: 2211
 ./build/analysis/table.txt:
-   modified on: 04 Feb 2017 12:43:50
+   modified on: 04 Feb 2017 12:54:22
    size of file: 30
 ./build/data/data.txt:
    modified on: 03 Feb 2017 15:52:58
    size of file: 1035
 ./build/data/sconscript.log:
-   modified on: 04 Feb 2017 12:45:54
+   modified on: 04 Feb 2017 14:52:20
    size of file: 0
 ./build/data/audit/auto/cr-gpo-daily/descr_Hcr03jn98-80 1.txt:
    modified on: 20 Dec 2016 12:38:30
@@ -109,9 +109,6 @@ MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/cr-gpo-daily
 ./build/data/audit/auto/hein-bound/descr_01101920.txt:
    modified on: 20 Dec 2016 12:35:55
    size of file: 10948
-./build/data/audit/auto/hein-bound/descr_01111900.txt:
-   modified on: 20 Dec 2016 12:34:49
-   size of file: 12511
 ./build/data/audit/auto/hein-bound/descr_01111910.txt:
    modified on: 20 Dec 2016 12:35:12
    size of file: 759
@@ -124,9 +121,6 @@ MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/cr-gpo-daily
 ./build/data/audit/auto/hein-bound/descr_01131930.txt:
    modified on: 20 Dec 2016 12:36:19
    size of file: 3861
-./build/data/audit/auto/hein-bound/descr_01161890.txt:
-   modified on: 20 Dec 2016 12:34:35
-   size of file: 7604
 ./build/data/audit/auto/hein-bound/descr_01161940.txt:
    modified on: 20 Dec 2016 12:36:06
    size of file: 4106
@@ -136,6 +130,12 @@ MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/cr-gpo-daily
 ./build/data/audit/auto/hein-bound/descr_01202010.txt:
    modified on: 20 Dec 2016 12:34:50
    size of file: 1882
+./build/data/audit/auto/hein-bound/descr_01231980.txt:
+   modified on: 20 Dec 2016 12:35:42
+   size of file: 833
+./build/data/audit/auto/hein-bound/descr_01271970.txt:
+   modified on: 20 Dec 2016 12:36:23
+   size of file: 714
 MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/hein-bound
 ./build/data/audit/auto/hein-daily/descr_01111995.txt:
    modified on: 20 Dec 2016 12:37:43
@@ -397,53 +397,50 @@ MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/results/hein-daily
 ./build/data/testing/data.txt:
    modified on: 03 Feb 2017 15:52:58
    size of file: 1035
-./build/data/testing/sconscript.log:
-   modified on: 04 Feb 2017 12:43:46
-   size of file: 0
 ./build/paper/ondeck.pdf:
-   modified on: 04 Feb 2017 12:43:53
+   modified on: 04 Feb 2017 12:54:23
    size of file: 18640
 ./build/paper/online_appendix.pdf:
-   modified on: 04 Feb 2017 12:43:56
+   modified on: 04 Feb 2017 12:54:25
    size of file: 45828
 ./build/paper/paper.pdf:
-   modified on: 04 Feb 2017 12:43:57
+   modified on: 04 Feb 2017 12:54:26
    size of file: 58176
 ./build/paper/sconscript.log:
-   modified on: 04 Feb 2017 12:43:58
+   modified on: 04 Feb 2017 12:54:27
    size of file: 317
 ./build/paper/text.pdf:
-   modified on: 04 Feb 2017 12:43:58
+   modified on: 04 Feb 2017 12:54:27
    size of file: 18640
 ./build/tables/table.lyx:
-   modified on: 04 Feb 2017 12:43:56
+   modified on: 04 Feb 2017 12:54:25
    size of file: 4432
 ./build/talk/sconscript.log:
-   modified on: 04 Feb 2017 12:44:02
+   modified on: 04 Feb 2017 12:54:29
    size of file: 564
 ./build/talk/slides.pdf:
-   modified on: 04 Feb 2017 12:44:02
+   modified on: 04 Feb 2017 12:54:29
    size of file: 28971
 ./release/paper/ondeck.pdf:
-   modified on: 04 Feb 2017 12:43:53
+   modified on: 04 Feb 2017 12:54:23
    size of file: 18640
 ./release/paper/online_appendix.pdf:
-   modified on: 04 Feb 2017 12:43:56
+   modified on: 04 Feb 2017 12:54:25
    size of file: 45828
 ./release/paper/paper.pdf:
-   modified on: 04 Feb 2017 12:43:57
+   modified on: 04 Feb 2017 12:54:26
    size of file: 58176
 ./release/paper/sconscript.log:
-   modified on: 04 Feb 2017 12:43:58
+   modified on: 04 Feb 2017 12:54:27
    size of file: 317
 ./release/paper/text.pdf:
-   modified on: 04 Feb 2017 12:43:58
+   modified on: 04 Feb 2017 12:54:27
    size of file: 18640
 ./release/talk/sconscript.log:
-   modified on: 04 Feb 2017 12:44:02
+   modified on: 04 Feb 2017 12:54:29
    size of file: 564
 ./release/talk/slides.pdf:
-   modified on: 04 Feb 2017 12:44:02
+   modified on: 04 Feb 2017 12:54:29
    size of file: 28971
 ./source/analysis/analysis.do:
    modified on: 28 Jan 2017 11:48:31
@@ -455,11 +452,17 @@ MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/results/hein-daily
    modified on: 28 Jan 2017 11:08:43
    size of file: 298
 ./source/data/downloads.yaml:
-   modified on: 04 Feb 2017 12:45:40
-   size of file: 153
+   modified on: 04 Feb 2017 14:51:48
+   size of file: 155
+./source/data/file_manifest.txt:
+   modified on: 04 Feb 2017 14:52:29
+   size of file: 38
 ./source/data/SConscript:
-   modified on: 04 Feb 2017 12:24:46
-   size of file: 134
+   modified on: 04 Feb 2017 12:53:07
+   size of file: 107
+./source/data/sconscript.log:
+   modified on: 04 Feb 2017 12:52:15
+   size of file: 0
 ./source/figures/figure.lyx:
    modified on: 26 Jan 2017 11:25:16
    size of file: 2223

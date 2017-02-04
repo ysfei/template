@@ -1,5 +1,3 @@
 Import('env')
 
-source           = 'downloads.yaml'
-
-env.BuildRClone('#build/data/sconscript.log', source) # Demonstrates using emitter
+env.BuildRClone('#build/data/sconscript.log', 'downloads.yaml') # Demonstrates using emitter
