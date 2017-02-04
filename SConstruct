@@ -20,7 +20,8 @@ env = Environment(ENV = {'PATH' : os.environ['PATH']},
                               'BuildR'      : Builder(action = gslab_scons.build_r),
                               'BuildStata'  : Builder(action = gslab_scons.build_stata),
                               'BuildPython' : Builder(action = gslab_scons.build_python),
-                              'BuildRClone' : Builder(action = gslab_scons.build_rclone)},
+                              'BuildRClone' : Builder(action = gslab_scons.build_rclone,
+                              						emitter = gslab_scons.misc.rclone_emitter)},
                   user_flavor = sf)
 
 env.Decider('MD5-timestamp') # Only computes hash if time-stamp changed

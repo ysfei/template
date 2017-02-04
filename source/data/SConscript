@@ -1,7 +1,5 @@
 Import('env')
 
 source           = 'downloads.yaml'
-target_file_name = 'data'
-target           = ['#%s/%s.txt' % (env['PATHS']['build']['data'], target_file_name)]
 
-env.BuildRClone(target, source) # Demonstrates using command line arguments
+env.BuildRClone(source) # Demonstrates using emitter
