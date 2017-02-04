@@ -8,18 +8,26 @@ as it can be edited after state_of_repo.log finishes running
 ===================================
 Last commit:
 
-commit 1cec9b841235cc764900acde71b3d2baef810b81
+commit ce975a32c76c8b74a816d75cbfcaa916ad918245
 Author: Levi Boxell <leviboxell@gmail.com>
-Date:   Thu Feb 2 11:03:31 2017 -0800
+Date:   Fri Feb 3 08:28:02 2017 -0800
 
-    #29 Reorganizes setup.py
+    #35 Fixes stata package check for windows
 
 
 Files changed since last commit:
 
 .sconsign.dblite
+SConstruct
+release/paper/ondeck.pdf
+release/paper/online_appendix.pdf
+release/paper/paper.pdf
+release/paper/sconscript.log
+release/paper/text.pdf
+release/talk/sconscript.log
+release/talk/slides.pdf
 sconstruct.log
-setup.py
+source/data/SConscript
 state_of_repo.log
 
 ===================================
@@ -34,10 +42,10 @@ state_of_repo.log
    modified on: 28 Jan 2017 12:11:50
    size of file: 3902
 ./SConstruct:
-   modified on: 02 Feb 2017 10:20:23
-   size of file: 1962
+   modified on: 03 Feb 2017 15:55:23
+   size of file: 2052
 ./sconstruct.log:
-   modified on: 03 Feb 2017 08:27:44
+   modified on: 03 Feb 2017 16:03:30
    size of file: 0
 ./setup.py:
    modified on: 03 Feb 2017 08:27:41
@@ -46,26 +54,348 @@ state_of_repo.log
    modified on: 03 Feb 2017 08:27:43
    size of file: 6041
 ./state_of_repo.log:
-   modified on: 03 Feb 2017 08:27:44
-   size of file: 479
+   modified on: 03 Feb 2017 16:03:30
+   size of file: 708
 ./user-config.yaml:
    modified on: 28 Jan 2017 12:11:47
    size of file: 75
 ./build/analysis/plot.eps:
-   modified on: 28 Jan 2017 11:48:58
+   modified on: 03 Feb 2017 16:03:06
    size of file: 12829
 ./build/analysis/sconscript.log:
-   modified on: 28 Jan 2017 11:48:58
+   modified on: 03 Feb 2017 16:03:06
    size of file: 2211
 ./build/analysis/table.txt:
-   modified on: 28 Jan 2017 11:48:58
+   modified on: 03 Feb 2017 16:03:06
    size of file: 30
 ./build/data/data.txt:
-   modified on: 28 Jan 2017 11:26:19
+   modified on: 03 Feb 2017 15:52:58
    size of file: 1035
 ./build/data/sconscript.log:
-   modified on: 28 Jan 2017 11:26:20
-   size of file: 1164
+   modified on: 03 Feb 2017 16:02:21
+   size of file: 0
+./build/data/audit/auto/cr-gpo-daily/descr_Hcr03jn98-80 1.txt:
+   modified on: 20 Dec 2016 12:38:30
+   size of file: 230
+./build/data/audit/auto/cr-gpo-daily/descr_Hcr07fe03-30 1.txt:
+   modified on: 20 Dec 2016 12:38:08
+   size of file: 247
+./build/data/audit/auto/cr-gpo-daily/descr_Hcr17ja08-99 1.txt:
+   modified on: 20 Dec 2016 12:38:05
+   size of file: 340
+./build/data/audit/auto/cr-gpo-daily/descr_Hcr21no03-89 1.txt:
+   modified on: 20 Dec 2016 12:38:19
+   size of file: 959
+./build/data/audit/auto/cr-gpo-daily/descr_Hcr29ap98-107 1.txt:
+   modified on: 20 Dec 2016 12:38:16
+   size of file: 248
+./build/data/audit/auto/cr-gpo-daily/descr_Scr08se98-47 1.txt:
+   modified on: 20 Dec 2016 12:38:24
+   size of file: 227
+./build/data/audit/auto/cr-gpo-daily/descr_Scr10se08-159 1.txt:
+   modified on: 20 Dec 2016 12:38:00
+   size of file: 573
+./build/data/audit/auto/cr-gpo-daily/descr_Scr11ap03pt2-34 1.txt:
+   modified on: 20 Dec 2016 12:38:22
+   size of file: 234
+./build/data/audit/auto/cr-gpo-daily/descr_Scr15se08-162 1.txt:
+   modified on: 20 Dec 2016 12:38:02
+   size of file: 131
+./build/data/audit/auto/cr-gpo-daily/descr_Scr16ap08-182 1.txt:
+   modified on: 20 Dec 2016 12:38:11
+   size of file: 229
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/cr-gpo-daily
+./build/data/audit/auto/hein-bound/descr_01101920.txt:
+   modified on: 20 Dec 2016 12:35:55
+   size of file: 10948
+./build/data/audit/auto/hein-bound/descr_01111900.txt:
+   modified on: 20 Dec 2016 12:34:49
+   size of file: 12511
+./build/data/audit/auto/hein-bound/descr_01111910.txt:
+   modified on: 20 Dec 2016 12:35:12
+   size of file: 759
+./build/data/audit/auto/hein-bound/descr_01121950.txt:
+   modified on: 20 Dec 2016 12:35:34
+   size of file: 1832
+./build/data/audit/auto/hein-bound/descr_01131880.txt:
+   modified on: 20 Dec 2016 12:35:33
+   size of file: 6547
+./build/data/audit/auto/hein-bound/descr_01131930.txt:
+   modified on: 20 Dec 2016 12:36:19
+   size of file: 3861
+./build/data/audit/auto/hein-bound/descr_01161890.txt:
+   modified on: 20 Dec 2016 12:34:35
+   size of file: 7604
+./build/data/audit/auto/hein-bound/descr_01161940.txt:
+   modified on: 20 Dec 2016 12:36:06
+   size of file: 4106
+./build/data/audit/auto/hein-bound/descr_01181960.txt:
+   modified on: 20 Dec 2016 12:36:02
+   size of file: 334
+./build/data/audit/auto/hein-bound/descr_01202010.txt:
+   modified on: 20 Dec 2016 12:34:50
+   size of file: 1882
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/hein-bound
+./build/data/audit/auto/hein-daily/descr_01111995.txt:
+   modified on: 20 Dec 2016 12:37:43
+   size of file: 439
+./build/data/audit/auto/hein-daily/descr_01132015.txt:
+   modified on: 20 Dec 2016 12:37:20
+   size of file: 686
+./build/data/audit/auto/hein-daily/descr_01212010.txt:
+   modified on: 20 Dec 2016 12:37:46
+   size of file: 1219
+./build/data/audit/auto/hein-daily/descr_01291985.txt:
+   modified on: 20 Dec 2016 12:36:41
+   size of file: 540
+./build/data/audit/auto/hein-daily/descr_01311990.txt:
+   modified on: 20 Dec 2016 12:37:21
+   size of file: 2000
+./build/data/audit/auto/hein-daily/descr_01312005.txt:
+   modified on: 20 Dec 2016 12:36:50
+   size of file: 131
+./build/data/audit/auto/hein-daily/descr_02012000.txt:
+   modified on: 20 Dec 2016 12:36:48
+   size of file: 2298
+./build/data/audit/auto/hein-daily/descr_06092010.txt:
+   modified on: 20 Dec 2016 12:37:41
+   size of file: 1917
+./build/data/audit/auto/hein-daily/descr_06102015.txt:
+   modified on: 20 Dec 2016 12:36:57
+   size of file: 2303
+./build/data/audit/auto/hein-daily/descr_06121990.txt:
+   modified on: 20 Dec 2016 12:37:33
+   size of file: 1584
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/auto/hein-daily
+./build/data/audit/manual/hein-bound/01101920.txt:
+   modified on: 20 Dec 2016 12:35:56
+   size of file: 3292
+./build/data/audit/manual/hein-bound/01111900.txt:
+   modified on: 20 Dec 2016 12:34:49
+   size of file: 3553
+./build/data/audit/manual/hein-bound/01111910.txt:
+   modified on: 20 Dec 2016 12:35:13
+   size of file: 700
+./build/data/audit/manual/hein-bound/01121950.txt:
+   modified on: 20 Dec 2016 12:35:36
+   size of file: 566
+./build/data/audit/manual/hein-bound/01131880.txt:
+   modified on: 20 Dec 2016 12:35:34
+   size of file: 2036
+./build/data/audit/manual/hein-bound/01131930.txt:
+   modified on: 20 Dec 2016 12:36:20
+   size of file: 1608
+./build/data/audit/manual/hein-bound/01161890.txt:
+   modified on: 20 Dec 2016 12:34:36
+   size of file: 2157
+./build/data/audit/manual/hein-bound/01161940.txt:
+   modified on: 20 Dec 2016 12:36:08
+   size of file: 1133
+./build/data/audit/manual/hein-bound/01181960.txt:
+   modified on: 20 Dec 2016 12:36:04
+   size of file: 107
+./build/data/audit/manual/hein-bound/01202010.txt:
+   modified on: 20 Dec 2016 12:34:52
+   size of file: 632
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/manual/hein-bound
+./build/data/audit/manual/hein-daily/01111995.txt:
+   modified on: 20 Dec 2016 12:37:46
+   size of file: 137
+./build/data/audit/manual/hein-daily/01132015.txt:
+   modified on: 20 Dec 2016 12:37:21
+   size of file: 193
+./build/data/audit/manual/hein-daily/01212010.txt:
+   modified on: 20 Dec 2016 12:37:48
+   size of file: 409
+./build/data/audit/manual/hein-daily/01291985.txt:
+   modified on: 20 Dec 2016 12:36:44
+   size of file: 141
+./build/data/audit/manual/hein-daily/01311990.txt:
+   modified on: 20 Dec 2016 12:37:24
+   size of file: 649
+./build/data/audit/manual/hein-daily/01312005.txt:
+   modified on: 20 Dec 2016 12:36:53
+   size of file: 44
+./build/data/audit/manual/hein-daily/02012000.txt:
+   modified on: 20 Dec 2016 12:36:50
+   size of file: 737
+./build/data/audit/manual/hein-daily/06092010.txt:
+   modified on: 20 Dec 2016 12:37:43
+   size of file: 585
+./build/data/audit/manual/hein-daily/06102015.txt:
+   modified on: 20 Dec 2016 12:36:58
+   size of file: 732
+./build/data/audit/manual/hein-daily/06121990.txt:
+   modified on: 20 Dec 2016 12:37:35
+   size of file: 491
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/manual/hein-daily
+./build/data/audit/raw/cr-gpo-daily/Hcr03jn98-80 1.txt:
+   modified on: 20 Dec 2016 12:38:30
+   size of file: 1561
+./build/data/audit/raw/cr-gpo-daily/Hcr07fe03-30 1.txt:
+   modified on: 20 Dec 2016 12:38:08
+   size of file: 692
+./build/data/audit/raw/cr-gpo-daily/Hcr17ja08-99 1.txt:
+   modified on: 20 Dec 2016 12:38:05
+   size of file: 4839
+./build/data/audit/raw/cr-gpo-daily/Hcr21no03-89 1.txt:
+   modified on: 20 Dec 2016 12:38:19
+   size of file: 12381
+./build/data/audit/raw/cr-gpo-daily/Hcr29ap98-107 1.txt:
+   modified on: 20 Dec 2016 12:38:16
+   size of file: 592
+./build/data/audit/raw/cr-gpo-daily/Scr08se98-47 1.txt:
+   modified on: 20 Dec 2016 12:38:24
+   size of file: 2942
+./build/data/audit/raw/cr-gpo-daily/Scr09jn08-134 1.txt:
+   modified on: 20 Dec 2016 12:38:32
+   size of file: 897
+./build/data/audit/raw/cr-gpo-daily/Scr10se08-159 1.txt:
+   modified on: 20 Dec 2016 12:37:59
+   size of file: 12116
+./build/data/audit/raw/cr-gpo-daily/Scr11ap03pt2-34 1.txt:
+   modified on: 20 Dec 2016 12:38:21
+   size of file: 1798
+./build/data/audit/raw/cr-gpo-daily/Scr15se08-162 1.txt:
+   modified on: 20 Dec 2016 12:38:02
+   size of file: 3843
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/raw/cr-gpo-daily
+./build/data/audit/raw/hein-bound/01101920.txt:
+   modified on: 20 Dec 2016 12:35:54
+   size of file: 42244
+./build/data/audit/raw/hein-bound/01111900.txt:
+   modified on: 20 Dec 2016 12:34:48
+   size of file: 55652
+./build/data/audit/raw/hein-bound/01111910.txt:
+   modified on: 20 Dec 2016 12:35:11
+   size of file: 55897
+./build/data/audit/raw/hein-bound/01121950.txt:
+   modified on: 20 Dec 2016 12:35:34
+   size of file: 35252
+./build/data/audit/raw/hein-bound/01131880.txt:
+   modified on: 20 Dec 2016 12:35:33
+   size of file: 58668
+./build/data/audit/raw/hein-bound/01131930.txt:
+   modified on: 20 Dec 2016 12:36:18
+   size of file: 58874
+./build/data/audit/raw/hein-bound/01161890.txt:
+   modified on: 20 Dec 2016 12:34:34
+   size of file: 59702
+./build/data/audit/raw/hein-bound/01161940.txt:
+   modified on: 20 Dec 2016 12:36:06
+   size of file: 51410
+./build/data/audit/raw/hein-bound/01181960.txt:
+   modified on: 20 Dec 2016 12:36:02
+   size of file: 38779
+./build/data/audit/raw/hein-bound/01202010.txt:
+   modified on: 20 Dec 2016 12:34:49
+   size of file: 15823
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/raw/hein-bound
+./build/data/audit/raw/hein-daily/01111995.txt:
+   modified on: 20 Dec 2016 12:37:43
+   size of file: 35361
+./build/data/audit/raw/hein-daily/01132015.txt:
+   modified on: 20 Dec 2016 12:37:19
+   size of file: 34056
+./build/data/audit/raw/hein-daily/01212010.txt:
+   modified on: 20 Dec 2016 12:37:46
+   size of file: 34953
+./build/data/audit/raw/hein-daily/01291985.txt:
+   modified on: 20 Dec 2016 12:36:41
+   size of file: 35596
+./build/data/audit/raw/hein-daily/01311990.txt:
+   modified on: 20 Dec 2016 12:37:21
+   size of file: 34501
+./build/data/audit/raw/hein-daily/01312005.txt:
+   modified on: 20 Dec 2016 12:36:50
+   size of file: 35116
+./build/data/audit/raw/hein-daily/02012000.txt:
+   modified on: 20 Dec 2016 12:36:47
+   size of file: 34388
+./build/data/audit/raw/hein-daily/06092010.txt:
+   modified on: 20 Dec 2016 12:37:41
+   size of file: 38491
+./build/data/audit/raw/hein-daily/06102015.txt:
+   modified on: 20 Dec 2016 12:36:57
+   size of file: 32690
+./build/data/audit/raw/hein-daily/06121990.txt:
+   modified on: 20 Dec 2016 12:37:33
+   size of file: 37821
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/raw/hein-daily
+./build/data/audit/results/hein-bound/comparison_046.txt:
+   modified on: 20 Dec 2016 12:36:34
+   size of file: 2081
+./build/data/audit/results/hein-bound/comparison_051.txt:
+   modified on: 20 Dec 2016 12:36:37
+   size of file: 2081
+./build/data/audit/results/hein-bound/comparison_056.txt:
+   modified on: 20 Dec 2016 12:36:39
+   size of file: 2080
+./build/data/audit/results/hein-bound/comparison_061.txt:
+   modified on: 20 Dec 2016 12:36:41
+   size of file: 2080
+./build/data/audit/results/hein-bound/comparison_066.txt:
+   modified on: 20 Dec 2016 12:36:29
+   size of file: 2080
+./build/data/audit/results/hein-bound/comparison_071.txt:
+   modified on: 20 Dec 2016 12:36:31
+   size of file: 2081
+./build/data/audit/results/hein-bound/comparison_076.txt:
+   modified on: 20 Dec 2016 12:36:33
+   size of file: 2079
+./build/data/audit/results/hein-bound/comparison_081.txt:
+   modified on: 20 Dec 2016 12:36:36
+   size of file: 2078
+./build/data/audit/results/hein-bound/comparison_086.txt:
+   modified on: 20 Dec 2016 12:36:38
+   size of file: 2080
+./build/data/audit/results/hein-bound/comparison_091.txt:
+   modified on: 20 Dec 2016 12:36:40
+   size of file: 2058
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/results/hein-bound
+./build/data/audit/results/hein-daily/comparison_099.txt:
+   modified on: 20 Dec 2016 12:37:54
+   size of file: 2067
+./build/data/audit/results/hein-daily/comparison_101.txt:
+   modified on: 20 Dec 2016 12:37:55
+   size of file: 2071
+./build/data/audit/results/hein-daily/comparison_104.txt:
+   modified on: 20 Dec 2016 12:37:56
+   size of file: 2075
+./build/data/audit/results/hein-daily/comparison_106.txt:
+   modified on: 20 Dec 2016 12:37:57
+   size of file: 2071
+./build/data/audit/results/hein-daily/comparison_109.txt:
+   modified on: 20 Dec 2016 12:37:58
+   size of file: 2073
+./build/data/audit/results/hein-daily/comparison_111.txt:
+   modified on: 20 Dec 2016 12:37:59
+   size of file: 2075
+./build/data/audit/results/hein-daily/comparison_114.txt:
+   modified on: 20 Dec 2016 12:37:59
+   size of file: 2077
+./build/data/audit/results/hein-daily/comparison_master.txt:
+   modified on: 20 Dec 2016 12:37:59
+   size of file: 2498
+./build/data/audit/results/hein-daily/errors_099.txt:
+   modified on: 20 Dec 2016 13:49:49
+   size of file: 2161
+./build/data/audit/results/hein-daily/errors_101.txt:
+   modified on: 20 Dec 2016 13:49:51
+   size of file: 709
+MAX ITERATIONS (10) HIT IN DIRECTORY: ./build/data/audit/results/hein-daily
+./build/data/audit/selection/audit_selections-cr-gpo-daily.txt:
+   modified on: 20 Dec 2016 12:34:28
+   size of file: 3122
+./build/data/audit/selection/audit_selections-hein-bound.txt:
+   modified on: 20 Dec 2016 12:34:28
+   size of file: 1372
+./build/data/audit/selection/audit_selections-hein-daily.txt:
+   modified on: 20 Dec 2016 12:34:28
+   size of file: 723
+./build/data/testing/data.txt:
+   modified on: 03 Feb 2017 15:52:58
+   size of file: 1035
 ./build/paper/ondeck.pdf:
    modified on: 26 Jan 2017 11:24:12
    size of file: 18645
@@ -73,10 +403,10 @@ state_of_repo.log
    modified on: 26 Jan 2017 11:24:14
    size of file: 45652
 ./build/paper/paper.pdf:
-   modified on: 28 Jan 2017 11:49:31
-   size of file: 58290
+   modified on: 03 Feb 2017 16:03:17
+   size of file: 58176
 ./build/paper/sconscript.log:
-   modified on: 28 Jan 2017 11:49:31
+   modified on: 03 Feb 2017 16:03:17
    size of file: 562
 ./build/paper/text.pdf:
    modified on: 26 Jan 2017 11:24:45
@@ -85,11 +415,11 @@ state_of_repo.log
    modified on: 28 Jan 2017 11:48:58
    size of file: 4432
 ./build/talk/sconscript.log:
-   modified on: 28 Jan 2017 11:49:37
+   modified on: 03 Feb 2017 16:03:24
    size of file: 564
 ./build/talk/slides.pdf:
-   modified on: 28 Jan 2017 11:49:36
-   size of file: 28987
+   modified on: 03 Feb 2017 16:03:24
+   size of file: 28971
 ./release/paper/ondeck.pdf:
    modified on: 26 Jan 2017 11:24:12
    size of file: 18645
@@ -97,20 +427,20 @@ state_of_repo.log
    modified on: 26 Jan 2017 11:24:14
    size of file: 45652
 ./release/paper/paper.pdf:
-   modified on: 28 Jan 2017 11:49:31
-   size of file: 58290
+   modified on: 03 Feb 2017 16:03:17
+   size of file: 58176
 ./release/paper/sconscript.log:
-   modified on: 28 Jan 2017 11:49:31
+   modified on: 03 Feb 2017 16:03:17
    size of file: 562
 ./release/paper/text.pdf:
    modified on: 26 Jan 2017 11:24:45
    size of file: 18645
 ./release/talk/sconscript.log:
-   modified on: 28 Jan 2017 11:49:37
+   modified on: 03 Feb 2017 16:03:24
    size of file: 564
 ./release/talk/slides.pdf:
-   modified on: 28 Jan 2017 11:49:36
-   size of file: 28987
+   modified on: 03 Feb 2017 16:03:24
+   size of file: 28971
 ./source/analysis/analysis.do:
    modified on: 28 Jan 2017 11:48:31
    size of file: 584
@@ -120,9 +450,12 @@ state_of_repo.log
 ./source/data/build.R:
    modified on: 28 Jan 2017 11:08:43
    size of file: 298
+./source/data/downloads.yaml:
+   modified on: 03 Feb 2017 16:02:12
+   size of file: 153
 ./source/data/SConscript:
-   modified on: 28 Jan 2017 11:56:21
-   size of file: 292
+   modified on: 03 Feb 2017 15:58:42
+   size of file: 240
 ./source/figures/figure.lyx:
    modified on: 26 Jan 2017 11:25:16
    size of file: 2223
