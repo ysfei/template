@@ -8,7 +8,7 @@ program main
     yaml local build_data=YAML.build.data
     yaml local build_analysis=YAML.build.analysis
 
-    import delimited "`build_data'/data.txt", delimiters("|") varnames(1) clear
+    import delimited "`build_data'/testing/data_2.txt", delimiters("|") varnames(1) clear
     hist x, discrete width(0.5)
     graph export "`build_analysis'/plot.eps", replace
 
