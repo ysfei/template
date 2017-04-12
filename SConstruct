@@ -1,5 +1,6 @@
 # Preliminaries
-import os
+import os, re
+#import SCons.SCons.Sconsign
 
 # Test for proper prerequisites and setup
 from setup import setup_test
@@ -24,7 +25,38 @@ env = Environment(ENV = {'PATH' : os.environ['PATH']},
                               'BuildPython' : Builder(action = gslab_scons.build_python)},
                   user_flavor = sf)
 
-env.Decider('MD5-timestamp') # Only computes hash if time-stamp changed
+
+def parse_sconsign_for_info(tgt):
+	sconsign = os.popen('sconsign .sconsign.dblite').readlines() # http://stackoverflow.com/questions/3503879/assign-output-of-os-system-to-a-variable-and-prevent-it-from-being-displayed-on
+	tgt_dir = '/'.join(tgt.split('/')[0:(len(tgt.split('/')) - 1)])
+	tgt_file = tgt.split('/')[len(tgt.split('/')) - 1]
+	dir_flag = 0
+	for line in sconsign:
+		if dir_flag == 1:
+			if re.search('^' + tgt_file, line):
+				csig = line.split(' ')[1].strip()
+				time_stamp = line.split(' ')[2].strip()
+				size = line.split(' ')[3].strip()
+				return csig, time_stamp, size
+		else:
+			if re.search(tgt_dir, line):
+				dir_flag = 1
+
+def new_decider(dependency, target, prev_ni):
+	tgt = str(target)
+	tgt_csig, tgt_time_stamp, tgt_size = parse_sconsign_for_info(tgt)
+	target_info = os.stat(str(target))
+
+	# Check target time-stamp and then content signature
+	if float(tgt_time_stamp) != target_info.st_mtime:
+		if tgt_csig != target.get_csig():
+			return True
+	# Check source files
+	else:
+		return dependency.changed_timestamp_then_content(target, prev_ni)
+
+
+env.Decider(new_decider) # Only computes hash if time-stamp changed
 env.EXTENSIONS = ['.eps', '.pdf', '.lyx'] # Extensions to be used when scanning for source files in BuildLyx.
 SourceFileScanner.add_scanner('.lyx', Scanner(gslab_scons.misc.lyx_scan, recursive = True))
 
