@@ -8,22 +8,19 @@ as it can be edited after state_of_repo.log finishes running
 ===================================
 Last commit:
 
-commit b54c4d3147c562c54bc23dedc2ff48c22b25695e
+commit 1f9d4ef521d6a154940e073d860a8b80825d0eda
 Author: Levi Boxell <leviboxell@gmail.com>
-Date:   Thu Apr 13 12:50:17 2017 -0700
+Date:   Thu Apr 13 14:44:47 2017 -0700
 
-    gslab_python#61 edits
+    test
 
 
 Files changed since last commit:
 
-.sconsign.dblite
 release/paper/ondeck.pdf
 release/paper/online_appendix.pdf
 release/paper/paper.pdf
-release/paper/sconscript.log
 release/paper/text.pdf
-release/talk/sconscript.log
 release/talk/slides.pdf
 sconstruct.log
 source/data/build.R
@@ -47,7 +44,7 @@ state_of_repo.log
    modified on: 13 Apr 2017 12:44:24
    size of file: 3271
 ./sconstruct.log:
-   modified on: 13 Apr 2017 12:58:07
+   modified on: 13 Apr 2017 14:46:23
    size of file: 41
 ./setup.py:
    modified on: 13 Apr 2017 12:33:02
@@ -56,74 +53,71 @@ state_of_repo.log
    modified on: 13 Apr 2017 12:33:06
    size of file: 5636
 ./state_of_repo.log:
-   modified on: 13 Apr 2017 12:58:12
-   size of file: 675
+   modified on: 13 Apr 2017 14:46:23
+   size of file: 584
 ./user-config.yaml:
    modified on: 13 Apr 2017 12:31:41
    size of file: 75
 ./build/analysis/plot.eps:
-   modified on: 13 Apr 2017 12:58:09
-   size of file: 12001
+   modified on: 13 Apr 2017 14:46:11
+   size of file: 12829
 ./build/analysis/sconscript.log:
-   modified on: 13 Apr 2017 12:58:09
+   modified on: 13 Apr 2017 14:46:11
    size of file: 2236
 ./build/analysis/table.txt:
-   modified on: 13 Apr 2017 12:58:09
+   modified on: 13 Apr 2017 14:46:11
    size of file: 30
 ./build/data/data.txt:
-   modified on: 13 Apr 2017 12:58:08
-   size of file: 500
-./build/data/data1.txt:
-   modified on: 13 Apr 2017 12:45:02
+   modified on: 13 Apr 2017 14:46:10
    size of file: 1035
 ./build/data/sconscript.log:
-   modified on: 13 Apr 2017 12:58:08
+   modified on: 13 Apr 2017 14:46:10
    size of file: 1189
 ./build/paper/ondeck.pdf:
-   modified on: 13 Apr 2017 12:45:04
+   modified on: 13 Apr 2017 14:46:12
    size of file: 18339
 ./build/paper/online_appendix.pdf:
-   modified on: 13 Apr 2017 12:45:05
+   modified on: 13 Apr 2017 14:46:13
    size of file: 45561
 ./build/paper/paper.pdf:
-   modified on: 13 Apr 2017 12:58:11
-   size of file: 57957
+   modified on: 13 Apr 2017 14:46:14
+   size of file: 57984
 ./build/paper/sconscript.log:
-   modified on: 13 Apr 2017 12:58:11
-   size of file: 587
+   modified on: 13 Apr 2017 14:46:14
+   size of file: 342
 ./build/paper/text.pdf:
-   modified on: 13 Apr 2017 12:45:07
+   modified on: 13 Apr 2017 14:46:14
    size of file: 18339
 ./build/tables/table.lyx:
-   modified on: 13 Apr 2017 12:58:09
+   modified on: 13 Apr 2017 14:46:13
    size of file: 4432
 ./build/talk/sconscript.log:
-   modified on: 13 Apr 2017 12:58:12
+   modified on: 13 Apr 2017 14:46:16
    size of file: 589
 ./build/talk/slides.pdf:
-   modified on: 13 Apr 2017 12:58:12
-   size of file: 28942
+   modified on: 13 Apr 2017 14:46:16
+   size of file: 28969
 ./release/paper/ondeck.pdf:
-   modified on: 13 Apr 2017 12:45:04
+   modified on: 13 Apr 2017 14:46:12
    size of file: 18339
 ./release/paper/online_appendix.pdf:
-   modified on: 13 Apr 2017 12:45:05
+   modified on: 13 Apr 2017 14:46:13
    size of file: 45561
 ./release/paper/paper.pdf:
-   modified on: 13 Apr 2017 12:58:11
-   size of file: 57957
+   modified on: 13 Apr 2017 14:46:14
+   size of file: 57984
 ./release/paper/sconscript.log:
-   modified on: 13 Apr 2017 12:58:11
-   size of file: 587
+   modified on: 13 Apr 2017 14:46:14
+   size of file: 342
 ./release/paper/text.pdf:
-   modified on: 13 Apr 2017 12:45:07
+   modified on: 13 Apr 2017 14:46:14
    size of file: 18339
 ./release/talk/sconscript.log:
-   modified on: 13 Apr 2017 12:58:12
+   modified on: 13 Apr 2017 14:46:16
    size of file: 589
 ./release/talk/slides.pdf:
-   modified on: 13 Apr 2017 12:58:12
-   size of file: 28942
+   modified on: 13 Apr 2017 14:46:16
+   size of file: 28969
 ./source/analysis/analysis.do:
    modified on: 11 Apr 2017 15:33:34
    size of file: 584
@@ -131,7 +125,7 @@ state_of_repo.log
    modified on: 11 Apr 2017 15:33:34
    size of file: 338
 ./source/data/build.R:
-   modified on: 13 Apr 2017 12:54:43
+   modified on: 13 Apr 2017 14:45:44
    size of file: 298
 ./source/data/SConscript:
    modified on: 13 Apr 2017 12:44:36
