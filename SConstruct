@@ -56,7 +56,7 @@ def new_decider(dependency, target, prev_ni):
 		return dependency.changed_timestamp_then_content(target, prev_ni)
 
 
-env.Decider(new_decider) # Only computes hash if time-stamp changed
+env.Decider('MD5-timestamp') # Only computes hash if time-stamp changed
 env.EXTENSIONS = ['.eps', '.pdf', '.lyx'] # Extensions to be used when scanning for source files in BuildLyx.
 SourceFileScanner.add_scanner('.lyx', Scanner(gslab_scons.misc.lyx_scan, recursive = True))
 

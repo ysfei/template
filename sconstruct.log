@@ -1,8 +1,17 @@
-*** New build: {2017-04-11 17:57:10} ***
+*** New build: {2017-04-13 12:49:16} ***
 scons: done reading SConscript files.
 scons: Building targets ...
-scons: `build' is up to date.
-scons: `release' is up to date.
-state_of_repo(["state_of_repo.log"], [])
+Retrieved `build/data/data.txt' from cache
+Retrieved `build/analysis/plot.eps' from cache
+Retrieved `build/analysis/table.txt' from cache
+Retrieved `build/paper/ondeck.pdf' from cache
+Retrieved `build/paper/online_appendix.pdf' from cache
+Retrieved `build/tables/table.lyx' from cache
+Retrieved `build/paper/paper.pdf' from cache
+Retrieved `build/paper/text.pdf' from cache
+Retrieved `build/talk/slides.pdf' from cache
+Install directory: "build/paper" as "release/paper"
+Install directory: "build/talk" as "release/talk"
+Retrieved `state_of_repo.log' from cache
 scons: done building targets.
-*** Build completed: {2017-04-11 17:57:18} ***
+*** Build completed: {2017-04-13 12:49:17} ***

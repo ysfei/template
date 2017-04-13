@@ -22,7 +22,7 @@ def setup_test(ARGUMENTS):
     sf           = ARGUMENTS.get('sf', sf_configs) 
     cache_dir    = user_configs['cache']
     if mode in ['cache', 'release']:
-        check_cache(cache)
+        check_cache(cache_dir)
 
     # Check stata after loading sf
     check_stata(sf)
