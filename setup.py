@@ -9,7 +9,7 @@ def setup_test(ARGUMENTS):
     check_python()
     check_r()
     check_lyx()
-    check_metropolis()
+    #check_metropolis()
     check_gitlfs()
     check_yamls()
 
@@ -22,7 +22,7 @@ def setup_test(ARGUMENTS):
     sf           = ARGUMENTS.get('sf', sf_configs) 
     cache_dir    = user_configs['cache']
     if mode in ['cache', 'release']:
-        check_cache(cache)
+        check_cache(cache_dir)
 
     # Check stata after loading sf
     check_stata(sf)
